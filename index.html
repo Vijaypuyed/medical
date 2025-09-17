@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Classic Movies — Browse & Watch Trailers</title>
+  <link rel="icon" href="favicon.png" />
+  <link href="styles.css" rel="stylesheet" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="logo.png" alt="logo" class="logo" />
+      <h1>Classic Movies</h1>
+    </div>
+    <nav class="nav">
+      <button id="homeBtn" class="nav-btn">Home</button>
+      <button id="moviesBtn" class="nav-btn">Movies</button>
+      <button id="contactBtn" class="nav-btn">Contact</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <h2>Movies released before 2015</h2>
+        <p>Browse posters, watch official trailers and visit legal sources (IMDb / YouTube).</p>
+      </div>
+    </section>
+
+    {# 
+        movies-section:
+        This section displays the movies content on the page.
+        The 'id' attribute allows for easy reference in JavaScript or CSS for dynamic updates or styling.
+    #}
+    <section class="movies-section" id="moviesSection">
+      <div class="grid" id="moviesGrid">
+        <!-- Movie cards injected by JS -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal for movie details -->
+  <div class="modal" id="movieModal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true">
+      <button class="close-btn" id="closeModal" aria-label="Close">✕</button>
+      <div class="modal-left">
+        <img id="modalPoster" src="" alt="poster" />
+      </div>
+      <div class="modal-right">
+        <h2 id="modalTitle"></h2>
+        <p id="modalMeta" class="meta"></p>
+        <p id="modalDesc" class="desc"></p>
+        <div id="trailerWrapper" class="trailer-wrapper"></div>
+        <div class="modal-actions">
+          <a id="imdbLink" class="btn" target="_blank" rel="noopener">View on IMDb</a>
+          <button id="bookBtn" class="btn primary">Book Ticket</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>© Classic Movies — Demonstration app. Trailers link to official YouTube pages. No pirated content.</p>
+  </footer>
+
+  <script src="movies_data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
